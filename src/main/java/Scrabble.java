@@ -35,7 +35,7 @@ public class Scrabble {
         this.word = word == null ? "" : word.toUpperCase();
         this.douLetter = douLetter == null ? new Character[0] : douLetter;
         this.triLetter = triLetter == null ? new Character[0] : triLetter;
-        //boolean flag checks if a letter has been used for double letter or triple letter score
+
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             score += values.get(c);
@@ -45,6 +45,7 @@ public class Scrabble {
         return score;
 }
     private int addLetterScore(int score) {
+        //boolean flag checks if a letter has been used for double letter or triple letter score
         boolean hasDouble = false;
         boolean hasTriple = false;
         for (Character doubleLetter : douLetter) {
