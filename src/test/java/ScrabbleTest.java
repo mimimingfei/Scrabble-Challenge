@@ -70,27 +70,24 @@ public class ScrabbleTest {
         Scrabble scrabble = new Scrabble("aa", new Character[]{'A'}, new Character[]{}, false, false);
         assertEquals(scrabble.score(), 3);
     }
-//
-//    @Test
-//    @Disabled
-//    public void returnsScoreForTripleLetterWord() {
-//        // Scrabble (String, Character[] , Character[] (triple letters), boolean, boolean;
-//        Scrabble scrabble = new Scrabble("a", new Character[]{}, new Character[]{'A'},false, false);
-//        assertEquals(scrabble.score(), 3);
-//    }
-//
-//    @Test
-//    @Disabled
-//    public void returnsScoreForTripleLetterOnlyOnce() {
-//        Scrabble scrabble = new Scrabble("aa", new Character[]{}, new Character[]{'A'},false, false);
-//        assertEquals(scrabble.score(), 4);
-//    }
-//
-//    @Test
-//    @Disabled
-//    public void returnsScoreForDoubleAndTripleLetter() {
-//        Scrabble scrabble = new Scrabble("aa", new Character[]{'A'}, new Character[]{'A'},false, false);
-//        assertEquals(scrabble.score(), 5);
-//    }
+
+    @Test
+    public void returnsScoreForTripleLetterWord() {
+        // Scrabble (String, Character[] , Character[] (triple letters), boolean, boolean;
+        Scrabble scrabble = new Scrabble("a", new Character[]{}, new Character[]{'A'},false, false);
+        assertEquals(scrabble.score(), 3);
+    }
+
+    @Test
+    public void returnsScoreForTripleLetterOnlyOnce() {
+        Scrabble scrabble = new Scrabble("aa", new Character[]{}, new Character[]{'A'},false, false);
+        assertEquals(scrabble.score(), 4);
+    }
+
+    @Test
+    public void returnsScoreForDoubleAndTripleLetter() {
+        Scrabble scrabble = new Scrabble("aa", new Character[]{'A'}, new Character[]{'A'},false, false);
+        assertEquals(scrabble.score(), 5);
+    }
 
 }
