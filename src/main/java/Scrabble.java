@@ -41,9 +41,12 @@ public class Scrabble {
             score += values.get(c);
         }
     score = addLetterScore(score);
-    score *= (isTriple != null && isTriple.booleanValue() ? 3 : (isDouble != null && isDouble.booleanValue() ? 2 : 1));
+    score = addWordScore(score);
         return score;
 }
+    private int addWordScore(int score){
+        return score *= (isTriple != null && isTriple.booleanValue() ? 3 : (isDouble != null && isDouble.booleanValue() ? 2 : 1));
+    }
     private int addLetterScore(int score) {
         //boolean flag checks if a letter has been used for double letter or triple letter score
         boolean hasDouble = false;
