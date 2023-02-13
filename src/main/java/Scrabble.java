@@ -48,30 +48,21 @@ public class Scrabble {
         return score *= (isTriple != null && isTriple.booleanValue() ? 3 : (isDouble != null && isDouble.booleanValue() ? 2 : 1));
     }
     private int addLetterScore(int score) {
-        //boolean flag checks if a letter has been used for double letter or triple letter score
-        boolean hasDouble = false;
-        boolean hasTriple = false;
         for (Character doubleLetter : douLetter) {
             if (word.indexOf(doubleLetter) != -1) {
-                if (!hasDouble) {
                     int doubleLetterValue = values.get(doubleLetter);
                     score += doubleLetterValue;
-                    hasDouble = true;
                 }
             }
-        }
         for (Character tripleLetter : triLetter) {
             if (word.indexOf(tripleLetter) != -1) {
-                if (!hasTriple) {
                     int tripleLetterValue = values.get(tripleLetter);
                     score += tripleLetterValue * 2;
-                    hasTriple = true;
                 }
             }
-        }
         return score;
+        }
     }
-}
 
 
 
